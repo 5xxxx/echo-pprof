@@ -4,7 +4,7 @@ import (
 	"net/http/pprof"
 	"strings"
 
-	"github.com/labstack/echo"
+	"github.com/labstack/echo/v4"
 )
 
 // Wrap adds several routes from package `net/http/pprof` to *echo.Echo object.
@@ -37,9 +37,9 @@ func WrapGroup(prefix string, g *echo.Group) {
 
 	for _, r := range routers {
 		switch r.Method {
-		case "GET":
+		case echo.GET:
 			g.GET(strings.TrimPrefix(r.Path, prefix), r.Handler)
-		case "POST":
+		case echo.POST:
 			g.POST(strings.TrimPrefix(r.Path, prefix), r.Handler)
 		}
 	}
