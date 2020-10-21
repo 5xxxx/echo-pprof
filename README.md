@@ -17,8 +17,8 @@ go get github.com/NSObjects/echo-pprof
 package main
 
 import (
-	"github.com/labstack/echo"
-	"github.com/sevenNt/echo-pprof"
+	"github.com/labstack/echo/v4"
+	"github.com/NSObjects/echo-pprof"
 )
 
 func main() {
