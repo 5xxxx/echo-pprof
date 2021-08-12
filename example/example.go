@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/NSObjects/echo-pprof"
+	"github.com/5xxxx/echo-pprof"
 	"github.com/labstack/echo/v4"
 )
 
@@ -21,5 +21,8 @@ func main() {
 	// group := e.Group(prefix)
 	// echopprof.WrapGroup(prefix, group)
 
-	e.Start(":8080")
+	err := e.Start(":8080")
+	if err != nil {
+		panic(err)
+	}
 }
